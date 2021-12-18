@@ -1,6 +1,9 @@
 3. practice/fibonachi
 https://ru.hexlet.io/challenges/php_basics_fib_exercise
 
+4. practice/add_digits
+https://ru.hexlet.io/challenges/php_basics_add_digits_exercise
+
 7. practice/happyTicket
 https://ru.hexlet.io/challenges/php_basics_happy_ticket_exercise
 
