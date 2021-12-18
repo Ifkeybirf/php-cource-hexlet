@@ -3,3 +3,7 @@ https://ru.hexlet.io/challenges/php_basics_fib_exercise
 
 7. practice/happyTicket
 https://ru.hexlet.io/challenges/php_basics_happy_ticket_exercise
+
+8.practice/fizzBuzz 
+https://ru.hexlet.io/challenges/php_basics_fizzbuzz_exercise
+
