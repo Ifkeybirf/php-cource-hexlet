@@ -1,9 +1,9 @@
 <?php
 
-function isDivision(int $divided, int $divider): bool{
+function isDivision(int $divided, int $divider): bool {
     $a = $divided / $divider;
     $b = intdiv($divided, $divider);
-    return ($a ===$b) ? true : false ;
+    return ($a ===$b) ? true : false;
 }
 //var_dump(isDivision(5,2) ) ;
 function fizzBuzz(int $begin, int $end) {
@@ -35,7 +35,7 @@ function fizzBuzz(int $begin, int $end) {
                 {
                     print "$qq ";
                 }
-    $qq += 1 ;
+    $qq++;
     }
 }
 
