@@ -1,0 +1,5 @@
+
+
+
+7. practice/happyTicket
+https://ru.hexlet.io/challenges/php_basics_happy_ticket_exercise
