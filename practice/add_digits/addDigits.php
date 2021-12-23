@@ -1,40 +1,38 @@
 <?php
 
-function addDigits( $userInput)
+function addDigits(int $userInput)
 {
     switch($userInput) {
+        case ($userInput < 0):
+        {
+            echo '<0'; return null;
+        }
         case ($userInput < 10):
         {
-            print $userInput . PHP_EOL;
+            return $userInput;
         }
         case ($userInput > 9):
         {
             (string) $str = ''. $userInput;
             $lng = strlen($str);
-//            var_dump($lng);echo "<-lng\n";
+            $res = $qq = 0;
+            $str2Arr = str_split($str);
 
-            $res = 0;
-            $qq = 0;
-//          for ($qq = 0; $qq < $lng; $qq++) {
             while ($qq < $lng) {
-//              print "qq $qq\n";
-//              var_dump('str[$qq] ' . $str[$qq]);
-                $res = $res + $str[$qq];
-//              var_dump('res: ' . $res . PHP_EOL);
+                $res += $str2Arr[$qq];
                 $qq++;
             }
             if ($res > 9)
             {
-                addDigits($res);
+                return addDigits($res);
             } else
-                print 'answer is ' . $res . PHP_EOL;
+                return $res;
 
-            return $res;
         }
     }
 }
 
-$ask = 221513;
-//$ask = 38;
-print_r($ask . '<= has been entered' . PHP_EOL);
-addDigits($ask);
+$ask = 221513; // 5
+
+print_r($ask . '<= has been entered' . PHP_EOL
+    . 'answer is ' . addDigits($ask) . PHP_EOL);
