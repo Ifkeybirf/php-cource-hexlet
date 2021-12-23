@@ -1,11 +1,15 @@
 <?php
 
-function isDivision(int $divided, int $divider): bool {
-    $a = $divided / $divider;
-    $b = intdiv($divided, $divider);
-    return ($a ===$b) ? true : false;
+function isDivision(int $divisible, int $divisor): bool {
+    /*
+     * $a = $divisible / $divisor;
+     * $b = intdiv($divisible, $divisor);
+     * return ($a === $b) ? true : false;
+     */
+
+    return ($divisible / $divisor) === intdiv($divisible, $divisor) ? true : false;
 }
-//var_dump(isDivision(5,2) ) ;
+
 function fizzBuzz(int $begin, int $end) {
     if ($begin > $end)
     {
@@ -13,30 +17,31 @@ function fizzBuzz(int $begin, int $end) {
     }
 
     define( 'fizz' , 3);
-    define ('buzz' , 2);
+    define ('buzz' , 5);
     
     $qq = $begin;
     while ($qq <= $end)
     {
         $resFizz = isDivision($qq, fizz);
         $resBuzz = isDivision($qq, buzz);
-        $resFizzBuzz = ( $resFizz && $resBuzz) ;
-        print "(iter $qq) ";
+        $resFizzBuzz = ($resFizz && $resBuzz) ;
+
         if ($resFizz && $resBuzz)
             {
                 print 'FizzBuzz ';
-            }elseif ($resFizz)
+            }elseif ($resFizz && !$resBuzz)
             {
                 print 'Fizz ';
-            }elseif ($resBuzz)
+            }elseif ($resBuzz && !$resFizz)
             {
                 print 'Buzz ';
             }elseif (!$resFizz && !$resBuzz && !$resFizzBuzz)
                 {
-                    print "$qq ";
+                    print_r($qq . ' ');
                 }
     $qq++;
     }
+    return null;
 }
 
-fizzBuzz(9, 15);
+fizzBuzz(11, 20);
