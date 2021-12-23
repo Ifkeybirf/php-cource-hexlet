@@ -21,10 +21,12 @@ isHappy('054702'); // true
 isHappy('00'); // true
 -----------------------------
 Change Log for v 1.1
-    - as requested function returns TRUE or FALSE, however gamification still present.
-    - function for generation random ticket number was moved to separate module and rewritten
-    - function for count length of each part was rewritten and moved to the same separate file
-    - 'foreach' cycle still not used :(  but I'm stuck.
+    - as requested function returns TRUE or FALSE, however gamification still can be present.
+    - primary function isHappy moved to Ticket namespace (as requested in specification)
+      - primary function invoked per specification Ticket\isHappy(), however there's unclear 'use function' part.
+    - function for generation random ticket number was moved to module and rewritten
+    - function for count length of each part was rewritten (reduce cycles count) and moved to the same separate module
+    - input params verification (checking that input string contains only digits)
 
 Change log for v1.0
     - it works!
