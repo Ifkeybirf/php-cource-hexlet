@@ -17,7 +17,9 @@ function isPowerOfThree(int $inDigit): bool
     }
     if (($a === $b) && $a = 1) {
         return true;
-    } else return false;
+    } else {
+        return false;
+    }
 }
 //  print intdiv(34,3) ."\n"; //1
 
