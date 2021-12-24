@@ -2,10 +2,10 @@
 
 function addDigits(int $userInput)
 {
-    switch($userInput) {
+    switch ($userInput) {
         case ($userInput < 0):
         {
-            echo '<0'; return null;
+            return null;
         }
         case ($userInput < 10):
         {
@@ -13,17 +13,15 @@ function addDigits(int $userInput)
         }
         case ($userInput > 9):
         {
-            (string) $str = ''. $userInput;
+            (string) $str = '' . $userInput;
             $lng = strlen($str);
             $res = $qq = 0;
-            $str2Arr = str_split($str);
 
             while ($qq < $lng) {
-                $res += $str2Arr[$qq];
+                $res += (int) $str[$qq];
                 $qq++;
             }
-            if ($res > 9)
-            {
+            if ($res > 9) {
                 return addDigits($res);
             } else
                 return $res;
