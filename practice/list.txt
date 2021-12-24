@@ -1,5 +1,8 @@
+2. practice/power3
+ru.hexlet.io/challenges/php_basics_power3_exercise
 
-
+3. practice/fibonachi
+https://ru.hexlet.io/challenges/php_basics_fib_exercise
 
 7. practice/happyTicket
 https://ru.hexlet.io/challenges/php_basics_happy_ticket_exercise
