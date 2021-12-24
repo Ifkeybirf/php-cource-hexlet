@@ -2,56 +2,51 @@
 
 namespace Ticket;
 
-function isNumberEven(string $number): bool
-{
-
-    if ($number % 2 !== 0) {
-        return false;
-    }
-    else return true;
-}
-
 function randomTicketNumber(int $cnt)
 {
-    if (isNumberEven($cnt) === false) {
+    if ($cnt % 2 !== 0) {
         print_r('the number of digits must be even' . PHP_EOL);
         return 0;
     }
+
     $txt = '';
     for ($qq = 1; $qq <= $cnt; $qq++) {
-        $tmp = random_int(1, 9);
+        $tmp = random_int(0, 9);
         $txt .= $tmp;
     }
     return $txt;
 }
 
-function halfNumF($inputString)
+function isHappy(string $ticketNumber): bool
 {
-    $myStrLn = strlen($inputString);
-    $a = intdiv($myStrLn, 2);
-    $b = $myStrLn / 2;
-
-    if ($a === $b) {
-        return $a;
-    } else return 0;
-}
-
-function isHappy(string $TicketNumber): bool
-{
-    if (!is_numeric("$TicketNumber")) {
+    if (!is_numeric($ticketNumber)) {
+        return false;
+    }
+    $ticketLen = strlen($ticketNumber);
+    /*
+     * even ticketLen used only twice in code below
+     * I decided that it is better than count strlen 3 times or more with code below
+     *
+     * additionally I'm not sure how to better collapse two 'if' below
+     */
+    if ($ticketLen % 2 !== 0) {
+        return false;
+    }
+    if ($ticketLen < 2) {
         return false;
     }
 
-    $halfNum = halfNumF($TicketNumber);
-    if ($halfNum < 1) {
-        return false;
-    }
     $lSum = $rSum = 0;
-    $str2Arr = str_split($TicketNumber);
-
-    for ($qq = 0; $qq <= $halfNum - 1; $qq++) {
-        $lSum += $str2Arr[$qq];
-        $rSum += $str2Arr[$qq+$halfNum];
+    for ($qq = 0; $qq < $ticketLen / 2; $qq++) {
+        $lSum += (int) $ticketNumber[$qq];
+        $rSum += (int) $ticketNumber[$qq + $ticketLen / 2];
     }
+
+    /*
+     * I did not use construction below
+     * return $lSum === $rSum && $halfNum > 1;
+     * because in this case we'll continue try to count lSum & rSum even halfNum < 1
+     * however, this is the reason to return that ticket is unhappy without additional calculations.
+     */
     return $lSum === $rSum;
 }

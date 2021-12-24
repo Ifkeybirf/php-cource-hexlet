@@ -10,6 +10,7 @@ $ticketForCheck = \Ticket\randomTicketNumber(6);
  * $ticketForCheck = '00'; //true
  * $ticketForCheck = '3a'; // false
  * $ticketForCheck = '054702'; // true
+ * $ticketForCheck = 'bb'; // false
  */
 
 print_r('checking ticket ' . $ticketForCheck . PHP_EOL);
