@@ -1,45 +1,32 @@
 <?php
 
-function isDivision(int $divisible, int $divisor): bool {
-    /*
-     * $a = $divisible / $divisor;
-     * $b = intdiv($divisible, $divisor);
-     * return ($a === $b) ? true : false;
-     */
-
-    return ($divisible / $divisor) === intdiv($divisible, $divisor) ? true : false;
+function isDivision(int $divisible, int $divisor): bool
+{
+    return ($divisible % $divisor) === 0 && intdiv($divisible, $divisor) ?: false;
 }
 
-function fizzBuzz(int $begin, int $end) {
-    if ($begin > $end)
-    {
+function fizzBuzz(int $begin, int $end)
+{
+    if ($begin > $end) {
         return ' ';
     }
 
-    define( 'fizz' , 3);
-    define ('buzz' , 5);
-    
     $qq = $begin;
-    while ($qq <= $end)
-    {
-        $resFizz = isDivision($qq, fizz);
-        $resBuzz = isDivision($qq, buzz);
-        $resFizzBuzz = ($resFizz && $resBuzz) ;
+    while ($qq <= $end) {
+        $resFizz = isDivision($qq, 3);
+        $resBuzz = isDivision($qq, 5);
+        $resFizzBuzz = ($resFizz && $resBuzz);
 
-        if ($resFizz && $resBuzz)
-            {
-                print 'FizzBuzz ';
-            }elseif ($resFizz && !$resBuzz)
-            {
-                print 'Fizz ';
-            }elseif ($resBuzz && !$resFizz)
-            {
-                print 'Buzz ';
-            }elseif (!$resFizz && !$resBuzz && !$resFizzBuzz)
-                {
-                    print_r($qq . ' ');
-                }
-    $qq++;
+        if ($resFizz && $resBuzz) {
+            print_r('FizzBuzz ');
+        } elseif ($resFizz && !$resBuzz) {
+            print_r('Fizz ');
+        } elseif ($resBuzz && !$resFizz) {
+            print_r('Buzz ');
+        } elseif (!$resFizz && !$resBuzz && !$resFizzBuzz) {
+            print_r($qq . ' ');
+        }
+        $qq++;
     }
     return null;
 }
