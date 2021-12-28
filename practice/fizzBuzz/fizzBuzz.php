@@ -2,15 +2,11 @@
 
 function isDivision(int $divisible, int $divisor): bool
 {
-    return ($divisible % $divisor) === 0 && intdiv($divisible, $divisor) ?: false;
+    return ($divisible % $divisor) === 0 && ($divisible > $divisor);
 }
 
 function fizzBuzz(int $begin, int $end)
 {
-    if ($begin > $end) {
-        return ' ';
-    }
-
     $qq = $begin;
     while ($qq <= $end) {
         $resFizz = isDivision($qq, 3);
@@ -19,16 +15,15 @@ function fizzBuzz(int $begin, int $end)
 
         if ($resFizz && $resBuzz) {
             print_r('FizzBuzz ');
-        } elseif ($resFizz && !$resBuzz) {
+        } elseif ($resFizz) {
             print_r('Fizz ');
-        } elseif ($resBuzz && !$resFizz) {
+        } elseif ($resBuzz) {
             print_r('Buzz ');
-        } elseif (!$resFizz && !$resBuzz && !$resFizzBuzz) {
+        } else {
             print_r($qq . ' ');
         }
         $qq++;
     }
-    return null;
 }
 
 fizzBuzz(11, 20);
