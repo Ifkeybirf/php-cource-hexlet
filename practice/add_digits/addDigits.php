@@ -7,7 +7,7 @@ function addDigits(int $userInput)
             return null;
         case ($userInput >= 0 && $userInput < 10):
             return $userInput;
-        case ($userInput > 9):
+        default:
             $str = (string)$userInput;
             $lng = strlen($str);
             $res = $qq = 0;
@@ -19,7 +19,7 @@ function addDigits(int $userInput)
             if ($res > 9) {
                 return addDigits($res);
             }
-    return $res;
+            return $res;
     }
 }
 
