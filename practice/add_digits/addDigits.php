@@ -19,9 +19,8 @@ function addDigits(int $userInput)
             if ($res > 9) {
                 return addDigits($res);
             }
-        return $res;
-    }
     return $res;
+    }
 }
 
 $ask = 221513; // 5
