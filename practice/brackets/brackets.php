@@ -3,20 +3,15 @@
 function isBalanced(string $input): bool
 {
     $count = 0;
-    for ($qq = 0; $qq < strlen($input); $qq++) {
-        print "input[$qq]= $input[$qq]\n";
-
+    $lengthInput = strlen($input);
+    for ($qq = 0; $qq < $lengthInput; $qq++) {
         switch ($input[$qq]) {
             case '(':
-            {
-                $count += 1;
+                $count++;
                 break;
-            }
             case ')':
-            {
-                $count -= 1;
+                $count--;
                 break;
-            }
         }
     }
     if ($count < 0) {
