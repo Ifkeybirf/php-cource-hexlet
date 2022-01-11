@@ -10,6 +10,9 @@ https://ru.hexlet.io/challenges/php_basics_fib_exercise
 4. practice/add_digits
 https://ru.hexlet.io/challenges/php_basics_add_digits_exercise
 
+5. practice/brackets
+https://ru.hexlet.io/challenges/php_basics_balanced_brackets_exercise
+
 6. practice/isPerfect/
 ru.hexlet.io/challenges/php_basics_perfect_numbers_exercise
 
@@ -18,4 +21,3 @@ https://ru.hexlet.io/challenges/php_basics_happy_ticket_exercise
 
 8.practice/fizzBuzz 
 https://ru.hexlet.io/challenges/php_basics_fizzbuzz_exercise
-
