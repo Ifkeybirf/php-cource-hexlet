@@ -1,0 +1,29 @@
+{
+	"name": "ifkeybirf/phpCource",
+	"description": "This project is for practicing writing php and unit tests",
+	"minimum-stability": "unstable",
+	"license": "GPL V2",
+	"authors": [
+        {
+            "name": "Ifkeybirf",
+            "email": "ifkeybirf@hotmail.com",
+            "homepage": "https://github.com/Ifkeybirf/",
+            "role": "QA Engineer, Manager, alkash"
+        }
+    ],
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+	"require-dev": {
+        "phpunit/phpunit": "*",
+		"phpunit/dbunit": "^4.0"
+    }
+	
+	
+	
+	
+	
+	
+}
