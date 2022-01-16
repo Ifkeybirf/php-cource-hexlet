@@ -1,7 +1,7 @@
 {
-	"name": "ifkeybirf/phpCource",
+	"Name": "Ifkeybirf/phpCource",
 	"description": "This project is for practicing writing php and unit tests",
-	"minimum-stability": "unstable",
+	"minimum-stability": "dev",
 	"license": "GPL V2",
 	"authors": [
         {
