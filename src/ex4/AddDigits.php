@@ -1,6 +1,5 @@
 <?php
-
-namespace PHPCourse;
+namespace PHPCourse\ex4;
 
 class AddDigits
 {
@@ -26,5 +25,4 @@ class AddDigits
                 return $res;
         }
     }
-
 }

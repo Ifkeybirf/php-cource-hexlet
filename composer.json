@@ -13,9 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-        "classmap": [
-                "src/"
-        ]
+            "PHPCourse\\": "src/"
         }
     },
     "require": {
