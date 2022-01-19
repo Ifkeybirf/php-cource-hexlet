@@ -1,12 +1,6 @@
 <?php
 namespace PHPCourse\ex1;
 
-assert_options(ASSERT_ACTIVE, 1);
-assert_options(ASSERT_WARNING, 0);
-
-use mysql_xdevapi\Exception;
-use function Webmozart\Assert\Tests\StaticAnalysis\string;
-
 class BinarySum
 {
     public function binarySum(string $addend1, string $addend2): string
