@@ -2,9 +2,10 @@
 
 namespace PHPCourse\ex7;
 
+use function PHPUnit\Framework\throwException;
+
 class HappyTicket
 {
-
     public function randomTicketNumber(int $cnt)
     {
         if ($cnt % 2 !== 0) {
@@ -23,7 +24,7 @@ class HappyTicket
     public function isHappy(string $ticketNumber): bool
     {
         if (!is_numeric($ticketNumber)) {
-            return false;
+            throw new \InvalidArgumentException('the ticket number must contain only digits');
         }
         $ticketLen = strlen($ticketNumber);
         /*
@@ -33,10 +34,7 @@ class HappyTicket
          * additionally I'm not sure how to better collapse two 'if' below
          */
         if ($ticketLen % 2 !== 0) {
-            return false;
-        }
-        if ($ticketLen < 2) {
-            return false;
+            throw new \InvalidArgumentException('the number of digits must be even');
         }
 
         $lSum = $rSum = 0;
@@ -53,5 +51,4 @@ class HappyTicket
          */
         return $lSum === $rSum;
     }
-
 }
