@@ -1,5 +1,7 @@
 <?php
 
+namespace PHPCourse\ex7;
+
 use PHPUnit\Framework\TestCase;
 
 class HappyTicketTest extends TestCase
@@ -15,7 +17,7 @@ class HappyTicketTest extends TestCase
         self::assertEquals($exp, $real);
     }
 
-    function happyTicketProvider(): array
+    public function happyTicketProvider(): array
     {
         return [
             ['1', '1230'],
@@ -38,7 +40,7 @@ class HappyTicketTest extends TestCase
         $check->isHappy($num);
     }
 
-    function happyTicketWrongProvider(): array
+    public function happyTicketWrongProvider(): array
     {
         return [
             ['321'],

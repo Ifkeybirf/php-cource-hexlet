@@ -1,5 +1,7 @@
 <?php
 
+namespace PHPCource\ex1;
+
 use PHPUnit\Framework\TestCase;
 
 class BinarySumTest extends TestCase

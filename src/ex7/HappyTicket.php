@@ -2,8 +2,6 @@
 
 namespace PHPCourse\ex7;
 
-use function PHPUnit\Framework\throwException;
-
 class HappyTicket
 {
     public function randomTicketNumber(int $cnt)
