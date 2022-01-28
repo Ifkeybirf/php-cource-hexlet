@@ -1,6 +1,7 @@
 <?php
 
 namespace PHPCourse\ex2;
+
 class Power3
 {
     public function isPowerOfThree(int $inDigit): bool
