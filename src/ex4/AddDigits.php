@@ -1,13 +1,14 @@
 <?php
+
 namespace PHPCourse\ex4;
 
 class AddDigits
 {
-    function addDigits(int $userInput)
+    public function addDigits(int $userInput)
     {
         switch (true) {
             case ($userInput < 0):
-                return null;
+                throw new \InvalidArgumentException('input digit must be > 0');
             case ($userInput >= 0 && $userInput < 10):
                 return $userInput;
             default:
@@ -20,7 +21,7 @@ class AddDigits
                     $qq++;
                 }
                 if ($res > 9) {
-                    return addDigits($res);
+                    return (new \PHPCourse\ex4\AddDigits())->addDigits($res);
                 }
                 return $res;
         }
