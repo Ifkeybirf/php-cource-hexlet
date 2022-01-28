@@ -15,7 +15,6 @@ class BinarySum
             throw new \InvalidArgumentException('addend2 should contain only 0 and 1');
         }
 
-        $sumDec = bindec($addend1) + bindec($addend2);
-        return decbin($sumDec);
+        return decbin(bindec($addend1) + bindec($addend2));
     }
 }

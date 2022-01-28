@@ -2,9 +2,7 @@
 
 namespace PHPCourse\ex4;
 
-use PHPUnit\Framework\TestCase;
-
-class AddDigitsTest extends TestCase
+class AddDigitsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider addDigitsProvider
