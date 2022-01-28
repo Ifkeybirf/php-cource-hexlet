@@ -1,10 +1,9 @@
 <?php
 
-namespace primary;
-require_once 'Ticket.php';
-//use function \Ticket\isHappy;
+namespace Ticket;
+require_once 'HappyTicket.php';
 
-$ticketForCheck = \Ticket\randomTicketNumber(6);
+$ticketForCheck = (new \PHPCourse\ex7\HappyTicket)->randomTicketNumber(6);
 /*
  * $ticketForCheck = '3'; //false
  * $ticketForCheck = '00'; //true
@@ -15,7 +14,7 @@ $ticketForCheck = \Ticket\randomTicketNumber(6);
 
 print_r('checking ticket ' . $ticketForCheck . PHP_EOL);
 
-if (\Ticket\isHappy($ticketForCheck) === true) {
+if ((new \PHPCourse\ex7\HappyTicket)->isHappy($ticketForCheck) === true ) {
     print_r(PHP_EOL . 'You WON! ticket is HAPPY!' . PHP_EOL);
 } else {
     print_r(PHP_EOL . 'you loose :( the ticket is unhappy' . PHP_EOL);
