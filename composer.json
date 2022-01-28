@@ -23,8 +23,11 @@
         "phpunit/phpunit": "9.5"
     },
     "scripts": {
-        "test": "phpunit",
-        "lint": "phpcs --standard=PSR12 ./src"
+        "test": "phpunit ",
+        "lint": "phpcs --standard=PSR12 ./src",
+        "lint-fix": "phpcbf --standard=PSR12 ./src",
+        "lintqa": "phpcs --standard=PSR12 ./tests",
+        "lintqa-fix": "phpcbf --standard=PSR12 ./tests"
     }
 
 }

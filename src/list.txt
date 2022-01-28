@@ -1,7 +1,7 @@
 1. practice/ex1
 ru.hexlet.io/challenges/php_basics_binary_sum_exercise
 
-2. practice/power3
+2. ex2/power3
 ru.hexlet.io/challenges/php_basics_power3_exercise
 
 3. practice/fibonachi
@@ -16,7 +16,7 @@ https://ru.hexlet.io/challenges/php_basics_balanced_brackets_exercise
 6. practice/isPerfect/
 ru.hexlet.io/challenges/php_basics_perfect_numbers_exercise
 
-7. practice/ex7
+7. ex7/HappyTicket
 https://ru.hexlet.io/challenges/php_basics_happy_ticket_exercise
 
 8.practice/fizzBuzz 

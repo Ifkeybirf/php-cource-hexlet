@@ -1,9 +1,10 @@
 <?php
+
 namespace PHPCourse\ex4;
 
 class AddDigits
 {
-    function addDigits(int $userInput)
+    public function addDigits(int $userInput)
     {
         switch (true) {
         case ($userInput < 0):

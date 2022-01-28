@@ -1,12 +1,12 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace PHPCourse\ex4;
 
-class AddDigitsTest extends TestCase
+class AddDigitsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider addDigitsProvider
-     * @return       array
+     * @return       void
      */
 
     public function testAddDigits($exp, $num): void
@@ -16,7 +16,7 @@ class AddDigitsTest extends TestCase
         self::assertEquals($exp, $actual);
     }
 
-    function addDigitsProvider(): array
+    public function addDigitsProvider(): array
     {
         return [
             ['0','0'],
@@ -28,18 +28,16 @@ class AddDigitsTest extends TestCase
         ];
     }
 
-    function testAddDigitsWrong(): void
+    public function testAddDigitsWrong(): void
     {
         $check1 = new \PHPCourse\ex4\AddDigits();
-        $this::getExpectedExceptionMessage('input digit must be > 0');
         $this->expectException(\InvalidArgumentException ::class);
         $check1->addDigits('-1');
     }
 
-    function testAddDigitsWrongType(): void
+    public function testAddDigitsWrongType(): void
     {
         $check2 = new \PHPCourse\ex4\AddDigits();
-        $this::getExpectedExceptionMessage('input digit must be a digit');
         $this->expectException(\TypeError ::class);
         $check2->addDigits('a');
     }
