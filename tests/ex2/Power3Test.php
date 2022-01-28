@@ -1,8 +1,8 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace PHPCourse\ex2;
 
-class Power3Test extends TestCase
+class Power3Test extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider power3Provider

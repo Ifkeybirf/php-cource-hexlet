@@ -11,7 +11,7 @@ class FizzBuzzTest extends \PHPUnit\Framework\TestCase
 
     public function testFizBuz($begin, $end, $exp): void
     {
-        self::assertStringMatchesFormat((new FizzBuzz())->fizzBuzz($begin,$end), $exp);
+        self::assertStringMatchesFormat((new FizzBuzz())->fizzBuzz($begin, $end), $exp);
     }
 
     public function fizBuzProvider(): array

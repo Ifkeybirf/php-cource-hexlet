@@ -5,7 +5,7 @@ namespace PHPCourse\ex6;
 class PerfectTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @dataProvider testIsPerfectDataprovider
+     * @dataProvider isPerfectDataprovider
      * @return       void
      */
     public function testIsPerfect($control, $expect): void
@@ -14,7 +14,7 @@ class PerfectTest extends \PHPUnit\Framework\TestCase
         self::assertEquals((int)$checker->isPerfect($control), $expect);
     }
 
-    public function testIsPerfectDataprovider(): array
+    public function isPerfectDataprovider(): array
     {
         return [
             ['6', '1'],
