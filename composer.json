@@ -23,7 +23,7 @@
         "phpunit/phpunit": "9.5"
     },
     "scripts": {
-        "test": "phpunit",
+        "test": "phpunit ",
         "lint": "phpcs --standard=PSR12 ./src"
     }
 

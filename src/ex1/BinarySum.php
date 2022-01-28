@@ -1,4 +1,5 @@
 <?php
+
 namespace PHPCourse\ex1;
 
 class BinarySum
@@ -17,9 +18,3 @@ class BinarySum
         return decbin($sumDec);
     }
 }
-/*
- * $a = '1101';
- * $b = '101';
- *
- * print_r("$a + $b = " . (new BinarySum())->binarySum($a, $b)  . PHP_EOL);
- */
