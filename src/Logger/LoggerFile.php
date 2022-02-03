@@ -4,11 +4,10 @@ namespace PHPCourse\Logger;
 
 class LoggerFile extends AbstractLogger
 {
-    private string $logFileName;
-
+    private string logFileName;
     public function __construct(string $fd)
     {
-        $this->logFileName = __DIR__ . '/../../' . $fd;
+        $this->logFileName = __DIR__/../../$fd;
     }
 
     public function log(string $msg): void

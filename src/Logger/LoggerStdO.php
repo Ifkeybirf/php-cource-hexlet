@@ -1,8 +1,8 @@
 <?php
 
-namespace PHPCourse\Logger ;
+namespace PHPCourse\Logger;
 
-class LoggerStdO extends AbstractLogger
+public class LoggerStdO extends AbstractLogger
 {
     public function log(string $msg): void
     {

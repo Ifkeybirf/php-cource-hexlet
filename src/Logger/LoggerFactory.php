@@ -11,7 +11,7 @@ class LoggerFactory
         $this->logFile = $logFileName;
     }
 
-    public function createLogger($loggerType): LoggerInterface
+    public function createLogger($loggerType):LoggerInterface
     {
         switch ($loggerType) {
             case 'stdo':
@@ -19,7 +19,7 @@ class LoggerFactory
 
             case 'file':
                 return new LoggerFile($this->logFile);
-            default:
+            default
                 return new LoggerFake();
         }
     }
