@@ -1,25 +1,24 @@
 <?php
 
-namespace PHPCourse\ex6;
+namespace ex6;
 
 class PerfectTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider isPerfectDataprovider
-     * @return       void
      */
-    public function testIsPerfect($control, $expect): void
+    public function testIsPerfect(int $control, bool $expect): void
     {
-        $checker = new Perfect();
-        self::assertEquals((int)$checker->isPerfect($control), $expect);
+        $checker = new \PHPCourse\ex6\Perfect();
+        self::assertEquals($checker->isPerfect($control), $expect);
     }
 
     public function isPerfectDataprovider(): array
     {
         return [
-            ['6', '1'],
-            ['62', '0'],
-            ['28', '1'],
+            [6, true],
+            [62, false],
+            [28, true],
         ];
     }
 }

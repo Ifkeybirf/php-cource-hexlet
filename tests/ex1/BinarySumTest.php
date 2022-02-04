@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPCource\ex1;
+namespace ex1;
 
 use PHPUnit\Framework\TestCase;
 
@@ -8,9 +8,8 @@ class BinarySumTest extends TestCase
 {
     /**
      * @dataProvider binarySumProvider
-     * @return       void
      */
-    public function testBinarySum($exp, $num1, $num2): void
+    public function testBinarySum(string $exp, string $num1, string $num2): void
     {
         $check1 = new \PHPCourse\ex1\BinarySum();
         $actual = $check1->binarySum($num1, $num2);
@@ -30,7 +29,7 @@ class BinarySumTest extends TestCase
     /**
      * @dataProvider binarySumWrongProvider
      */
-    public function testBinarySumWrong($num1, $num2): void
+    public function testBinarySumWrong(string $num1, string $num2): void
     {
         $check = new \PHPCourse\ex1\BinarySum();
         $this->expectException(\InvalidArgumentException::class);

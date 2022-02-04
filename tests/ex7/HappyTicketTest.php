@@ -1,7 +1,8 @@
 <?php
 
-namespace PHPCourse\ex7;
+namespace ex7;
 
+use PHPCourse\ex7\HappyTicket;
 use PHPUnit\Framework\TestCase;
 
 class HappyTicketTest extends TestCase
@@ -9,33 +10,29 @@ class HappyTicketTest extends TestCase
     /**
      * @dataProvider happyTicketProvider
      */
-
-    public function testHappyTicket($exp, $num): void
+    public function testHappyTicket(bool $exp, string $num): void
     {
-        $check = new \PHPCourse\ex7\HappyTicket();
-        $real = (int)$check->isHappy($num);
+        $check = HappyTicket::getInstance();
+        $real = $check->isHappy($num);
         self::assertEquals($exp, $real);
     }
 
     public function happyTicketProvider(): array
     {
         return [
-            ['1', '1230'],
-            ['0', '1130'],
-            ['1', '054702'],
-            ['0', '01'],
+            [true, '1230'],
+            [false, '1130'],
+            [true, '054702'],
+            [false, '01'],
         ];
     }
 
     /**
      * @dataProvider      happyTicketWrongProvider
-     * @return            array
-     * @expectedException \InvalidArgumentException
      */
-
-    public function testHappyTicketWrong($num)
+    public function testHappyTicketWrong(string $num): void
     {
-        $check = new \PHPCourse\ex7\HappyTicket();
+        $check = HappyTicket::getInstance();
         $this->expectException(\InvalidArgumentException::class);
         $check->isHappy($num);
     }

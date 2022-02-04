@@ -4,7 +4,7 @@ namespace PHPCourse\ex3;
 
 class Fibonachi
 {
-    public function fib(int $n)
+    public function fib(int $n): int
     {
         if ($n < 0) {
             return 'invalid input value';
@@ -15,8 +15,6 @@ class Fibonachi
         if ($n === 1) {
             return 1;
         }
-
-        $myFibObj = new \PHPCourse\ex3\Fibonachi();
-        return $myFibObj->fib($n - 2) + $myFibObj->fib($n - 1);
+        return $this->fib($n - 2) + $this->fib($n - 1);
     }
 }

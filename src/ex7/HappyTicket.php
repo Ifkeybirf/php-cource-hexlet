@@ -6,7 +6,20 @@ use function PHPUnit\Framework\throwException;
 
 class HappyTicket
 {
-    public function randomTicketNumber(int $cnt)
+    private static $_instance;
+    private function __construct()
+    {
+        // empty private construct function, so nobody will be able to call it directly
+    }
+
+    public static function getInstance(): HappyTicket
+    {
+        if (self::$_instance === null) {
+            self::$_instance = new self;
+        }
+        return self::$_instance;
+    }
+    public function randomTicketNumber(int $cnt): string
     {
         if ($cnt % 2 !== 0) {
             print_r('the number of digits must be even' . PHP_EOL);
