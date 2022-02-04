@@ -4,7 +4,9 @@ namespace PHPCourse\Logger;
 
 interface LoggerInterface
 {
-    public function error(string $msg): void;
-    public function warning(string $msg): void;
-    public function info(string $msg): void;
+    public function err(string $msg): void;
+
+    public function warn(string $msg): void;
+
+    public function inf(string $msg): void;
 }
