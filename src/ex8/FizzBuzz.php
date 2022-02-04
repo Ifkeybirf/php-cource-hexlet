@@ -4,13 +4,18 @@ namespace PHPCourse\ex8;
 
 class FizzBuzz
 {
-    public function fizzBuzz(int $begin, int $end): string
+    public function fizzBuzz(int $begin, int $end): void
+    {
+        print_r($this->fizzBuzzCalc($begin, $end) . PHP_EOL);
+    }
+
+    public function fizzBuzzCalc(int $begin, int $end): string
     {
         $result = '';
         $qq = $begin;
         while ($qq <= $end) {
-            $resFizz = FizzBuzz::isDivision($qq, 3);
-            $resBuzz = FizzBuzz::isDivision($qq, 5);
+            $resFizz = $this->isDivision($qq, 3);
+            $resBuzz = $this->isDivision($qq, 5);
             $resFizzBuzz = ($resFizz && $resBuzz);
 
             if ($resFizz && $resBuzz) {
@@ -29,6 +34,6 @@ class FizzBuzz
 
     public function isDivision(int $divisible, int $divisor): bool
     {
-        return ($divisible % $divisor) === 0 && ($divisible > $divisor);
+        return ($divisible % $divisor) === 0;
     }
 }

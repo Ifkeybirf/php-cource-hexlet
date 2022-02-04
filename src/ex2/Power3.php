@@ -15,6 +15,6 @@ class Power3
             $a = $inDigit / $divider;
             $b = intdiv($inDigit, $divider);
         }
-        return ($a === $b && $a = 1);
+        return ($a === $b && $a === 1);
     }
 }
