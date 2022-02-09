@@ -1,6 +1,6 @@
 <?php
 
-namespace ex4;
+namespace PHPCourseTest\ex4;
 
 use PHPCourse\ex4\AddDigits;
 

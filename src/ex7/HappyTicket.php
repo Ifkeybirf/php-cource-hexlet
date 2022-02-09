@@ -2,11 +2,10 @@
 
 namespace PHPCourse\ex7;
 
-use function PHPUnit\Framework\throwException;
-
 class HappyTicket
 {
-    private static $_instance;
+    private static $instance;
+
     private function __construct()
     {
         // empty private construct function, so nobody will be able to call it directly
@@ -14,11 +13,12 @@ class HappyTicket
 
     public static function getInstance(): HappyTicket
     {
-        if (self::$_instance === null) {
-            self::$_instance = new self;
+        if (self::$instance === null) {
+            self::$instance = new self();
         }
-        return self::$_instance;
+        return self::$instance;
     }
+
     public function randomTicketNumber(int $cnt): string
     {
         if ($cnt % 2 !== 0) {

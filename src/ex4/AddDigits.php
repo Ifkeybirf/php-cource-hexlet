@@ -4,7 +4,7 @@ namespace PHPCourse\ex4;
 
 class AddDigits
 {
-    protected static $_instance;
+    protected static $instance;
 
     private function __construct()
     {
@@ -13,13 +13,13 @@ class AddDigits
 
     public static function getInstance(): AddDigits
     {
-        if (self::$_instance === null) {
-            self::$_instance = new self;
+        if (self::$instance === null) {
+            self::$instance = new self();
         }
-        return self::$_instance;
+        return self::$instance;
     }
 
-    public function addDigits(int $userInput)
+    public function addDigits(int $userInput): int
     {
         switch (true) {
             case ($userInput < 0):
