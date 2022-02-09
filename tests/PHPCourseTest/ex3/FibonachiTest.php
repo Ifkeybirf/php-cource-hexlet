@@ -2,6 +2,8 @@
 
 namespace PHPCourseTest\ex3;
 
+use PHPCourse\ex3\Fibonachi;
+
 class FibonachiTest extends \PhpUnit\Framework\TestCase
 {
     /**
@@ -9,8 +11,16 @@ class FibonachiTest extends \PhpUnit\Framework\TestCase
      */
     public function testFibonachi(int $expected, int $num): void
     {
-        $actual = (new \PHPCourse\ex3\Fibonachi())->fib($num);
+        $fibObj = Fibonachi::getInstance();
+        $actual = $fibObj->fib($num);
         self::assertEquals($expected, $actual);
+    }
+
+    public function testFibonachiWrong(): void
+    {
+        $fibObj = Fibonachi::getInstance();
+        $this->expectException(\InvalidArgumentException::class);
+        $fibObj->fib(-1);
     }
 
     public function fibonachiProvider(): array

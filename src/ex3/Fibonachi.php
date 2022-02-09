@@ -4,6 +4,21 @@ namespace PHPCourse\ex3;
 
 class Fibonachi
 {
+    private static $instance;
+
+    private function __construct()
+    {
+        // empty private construct function, so nobody will be able to call it directly
+    }
+
+    public static function getInstance(): Fibonachi
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
     public function fib(int $n): int
     {
         if ($n < 0) {

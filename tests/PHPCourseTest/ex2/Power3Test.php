@@ -10,7 +10,7 @@ class Power3Test extends \PHPUnit\Framework\TestCase
     public function testPower3(bool $expected, int $digit): void
     {
         $check = new \PHPCourse\ex2\Power3();
-        self::assertEquals($check->isPowerOfThree($digit), $expected);
+        self::assertEquals($expected, $check->isPowerOfThree($digit));
     }
 
     public function power3Provider(): array
