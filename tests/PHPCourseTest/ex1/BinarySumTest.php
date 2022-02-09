@@ -1,10 +1,8 @@
 <?php
 
-namespace ex1;
+namespace PHPCourseTest\ex1;
 
-use PHPUnit\Framework\TestCase;
-
-class BinarySumTest extends TestCase
+class BinarySumTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider binarySumProvider

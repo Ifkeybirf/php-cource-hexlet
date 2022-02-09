@@ -7,7 +7,7 @@ class Fibonachi
     public function fib(int $n): int
     {
         if ($n < 0) {
-            return 'invalid input value';
+            throw new \InvalidArgumentException('input digit must be >= 0');
         }
         if ($n === 0) {
             return 0;

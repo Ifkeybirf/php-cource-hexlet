@@ -1,10 +1,8 @@
 <?php
 
-namespace ex5;
+namespace PHPCourseTest\ex5;
 
-use PHPUnit\Framework\TestCase;
-
-class BracketsTest extends TestCase
+class BracketsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider bracketsProvider

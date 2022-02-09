@@ -1,13 +1,13 @@
 <?php
 
-namespace ex2;
+namespace PHPCourseTest\ex2;
 
 class Power3Test extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider power3Provider
      */
-    public function testPower3(int $digit, int $expected): void
+    public function testPower3(bool $expected, int $digit): void
     {
         $check = new \PHPCourse\ex2\Power3();
         self::assertEquals($check->isPowerOfThree($digit), $expected);
@@ -19,15 +19,15 @@ class Power3Test extends \PHPUnit\Framework\TestCase
          * control data and expected result
          */
         return [
-            [4, 0],
-            [9, 1],
-            [219, 0],
-            [80, 0],
-            [243, 1],
-            [1, 0],
-            [3, 1],
-            [729, 1],
-            [728, 0],
+            [false, 4],
+            [true, 9],
+            [false, 219],
+            [false, 80],
+            [true, 243],
+            [false, 1],
+            [true, 3],
+            [true, 729],
+            [false, 728],
         ];
     }
 }

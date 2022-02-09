@@ -1,11 +1,10 @@
 <?php
 
-namespace ex7;
+namespace PHPCourseTest\ex7;
 
 use PHPCourse\ex7\HappyTicket;
-use PHPUnit\Framework\TestCase;
 
-class HappyTicketTest extends TestCase
+class HappyTicketTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @dataProvider happyTicketProvider
@@ -13,8 +12,8 @@ class HappyTicketTest extends TestCase
     public function testHappyTicket(bool $exp, string $num): void
     {
         $check = HappyTicket::getInstance();
-        $real = $check->isHappy($num);
-        self::assertEquals($exp, $real);
+        $actual = $check->isHappy($num);
+        self::assertEquals($exp, $actual);
     }
 
     public function happyTicketProvider(): array
@@ -28,7 +27,7 @@ class HappyTicketTest extends TestCase
     }
 
     /**
-     * @dataProvider      happyTicketWrongProvider
+     * @dataProvider happyTicketWrongProvider
      */
     public function testHappyTicketWrong(string $num): void
     {

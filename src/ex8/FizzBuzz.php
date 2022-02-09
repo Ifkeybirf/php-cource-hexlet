@@ -16,7 +16,6 @@ class FizzBuzz
         while ($qq <= $end) {
             $resFizz = $this->isDivision($qq, 3);
             $resBuzz = $this->isDivision($qq, 5);
-            $resFizzBuzz = ($resFizz && $resBuzz);
 
             if ($resFizz && $resBuzz) {
                 $result .= 'FizzBuzz ';
@@ -29,7 +28,7 @@ class FizzBuzz
             }
             $qq++;
         }
-        return $result;
+        return trim($result);
     }
 
     public function isDivision(int $divisible, int $divisor): bool
