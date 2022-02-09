@@ -13,7 +13,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "PHPCourse\\": "src/"
+            "PHPCourse\\": "src/",
+            "PHPCourseTest\\": "tests/"
         }
     },
     "require": {
@@ -29,6 +30,4 @@
         "lintqa": "phpcs --standard=PSR12 ./tests",
         "lintqa-fix": "phpcbf --standard=PSR12 ./tests"
     }
-
 }
-
