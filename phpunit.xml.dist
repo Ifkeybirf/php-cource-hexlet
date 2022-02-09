@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!-- Copyright 1999-2022. Plesk International GmbH. All rights reserved. -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" executionOrder="random" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
   <php>
     <ini name="memory_limit" value="128M"/>
