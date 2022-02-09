@@ -40,7 +40,7 @@ class HappyTicketTest extends \PHPUnit\Framework\TestCase
     {
         return [
             ['321'],
-            ['2a']
+            ['2a'],
         ];
     }
 }

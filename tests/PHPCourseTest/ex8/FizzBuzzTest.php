@@ -17,7 +17,7 @@ class FizzBuzzTest extends \PHPUnit\Framework\TestCase
         return [
             ['11 Fizz 13', 11, 13],
             ['11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz', 11, 20],
-            ['', 13, 11]
+            ['', 13, 11],
         ];
     }
 }
