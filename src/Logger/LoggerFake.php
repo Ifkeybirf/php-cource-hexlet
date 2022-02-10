@@ -4,18 +4,17 @@ namespace PHPCourse\Logger;
 
 class LoggerFake extends AbstractLogger
 {
-
-    public function Err(string $msg): void
+    public function err(string $msg): void
     {
         // TODO: Implement Err() method.
     }
 
-    public function Warn(string $msg): void
+    public function warn(string $msg): void
     {
         // TODO: Implement Warn() method.
     }
 
-    public function Info(string $msg): void
+    public function info(string $msg): void
     {
         // TODO: Implement Info() method.
     }
