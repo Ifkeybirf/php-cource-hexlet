@@ -9,6 +9,7 @@ class Fibonachi
     private function __construct()
     {
         // empty private construct function, so nobody will be able to call it directly
+        $this->logger = new \PHPCourse\Logger\LoggerFile('ex3Fib.log');
     }
 
     public static function getInstance(): Fibonachi
@@ -22,6 +23,7 @@ class Fibonachi
     public function fib(int $n): int
     {
         if ($n < 0) {
+            $this->logger->err('input digit must be >= 0');
             throw new \InvalidArgumentException('input digit must be >= 0');
         }
         if ($n === 0) {

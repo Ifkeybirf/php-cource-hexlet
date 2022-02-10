@@ -9,6 +9,8 @@ class HappyTicket
     private function __construct()
     {
         // empty private construct function, so nobody will be able to call it directly
+        $this->LogOut = new \PHPCourse\Logger\LoggerStdO();
+        $this->LogFl = new \PHPCourse\Logger\LoggerFile('ex7happyTicket.log');
     }
 
     public static function getInstance(): HappyTicket
@@ -22,7 +24,7 @@ class HappyTicket
     public function randomTicketNumber(int $cnt): string
     {
         if ($cnt % 2 !== 0) {
-            print_r('the number of digits must be even' . PHP_EOL);
+            $this->LogOut->warn('the number of digits must be even');
             return 0;
         }
 
@@ -37,6 +39,7 @@ class HappyTicket
     public function isHappy(string $ticketNumber): bool
     {
         if (!is_numeric($ticketNumber)) {
+            $this->LogFl->err('the ticket number must contain only digits');
             throw new \InvalidArgumentException('the ticket number must contain only digits');
         }
         $ticketLen = strlen($ticketNumber);
@@ -47,6 +50,7 @@ class HappyTicket
          * additionally I'm not sure how to better collapse two 'if' below
          */
         if ($ticketLen % 2 !== 0) {
+            $this->LogFl->inf('the number of digits must be even');
             throw new \InvalidArgumentException('the number of digits must be even');
         }
 
