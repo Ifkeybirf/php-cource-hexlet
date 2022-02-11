@@ -2,7 +2,7 @@
 
 namespace PHPCourse\Logger;
 
-class LoggerFile extends AbstractLogger
+class LoggerFile extends LoggerAbstract
 {
     private string $logFileName;
 

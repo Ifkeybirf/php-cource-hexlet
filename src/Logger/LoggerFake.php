@@ -2,7 +2,7 @@
 
 namespace PHPCourse\Logger;
 
-class LoggerFake extends AbstractLogger
+class LoggerFake extends LoggerAbstract
 {
     public function err(string $msg): void
     {

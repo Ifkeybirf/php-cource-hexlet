@@ -2,7 +2,7 @@
 
 namespace PHPCourse\Logger;
 
-abstract class AbstractLogger implements LoggerInterface
+abstract class LoggerAbstract implements LoggerInterface
 {
     abstract public function log(string $msg): void;
 

@@ -2,7 +2,7 @@
 
 namespace PHPCourse\Logger;
 
-class LoggerStdO extends AbstractLogger
+class LoggerStdO extends LoggerAbstract
 {
     public function log(string $msg): void
     {
