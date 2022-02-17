@@ -8,9 +8,10 @@ class HappyTicket
 
     private function __construct()
     {
-        // empty private construct function, so nobody will be able to call it directly
-        $this->LogOut = new \PHPCourse\Logger\LoggerStdO();
-        $this->LogFl = new \PHPCourse\Logger\LoggerFile('ex7happyTicket.log');
+        $myConf = require __DIR__ . '/conf.php';
+
+        $this->LogOut = (new \PHPCourse\Logger\LoggerFactory($myConf['logger'], 'Std0'))->createLogger();
+        $this->LogFl  = (new \PHPCourse\Logger\LoggerFactory($myConf['logger'], 'Fil0'))->createLogger();
     }
 
     public static function getInstance(): HappyTicket

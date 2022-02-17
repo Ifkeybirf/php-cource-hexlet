@@ -4,21 +4,22 @@ namespace PHPCourse\Logger;
 
 class LoggerFactory
 {
-    private $logFile;
+    private array $config;
+    private string $loggerName;
 
-    public function __construct(string $logFileName)
+    public function __construct(array $conf, $name)
     {
-        $this->logFile = $logFileName;
+        $this->config = $conf;
+        $this->loggerName = $name;
     }
 
-    public function createLogger($loggerType): LoggerInterface
+    public function createLogger(): LoggerInterface
     {
-        switch ($loggerType) {
+        switch ($this->config[$this->loggerName]['type']) {
             case 'stdo':
                 return new LoggerStdO();
-
             case 'file':
-                return new LoggerFile($this->logFile);
+                return new LoggerFile($this->config[$this->loggerName]['logFilename']);
             default:
                 return new LoggerFake();
         }

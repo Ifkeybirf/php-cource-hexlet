@@ -8,16 +8,16 @@ abstract class LoggerAbstract implements LoggerInterface
 
     public function err(string $msg): void
     {
-        $this->log('[ERR]: ' . $msg);
+        $this->log('[ERR][' . date("Y-m-d H:i:s") . '] ' . $msg);
     }
 
     public function warn(string $msg): void
     {
-        $this->log('[Warn]: ' . $msg);
+        $this->log('[Warn][' . date("Y-m-d H:i:s") . '] ' . $msg);
     }
 
     public function inf(string $msg): void
     {
-        $this->log('[INFO]: ' . $msg);
+        $this->log('[INFO][' . date("Y-m-d H:i:s") . '] ' . $msg);
     }
 }
