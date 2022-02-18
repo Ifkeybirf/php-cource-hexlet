@@ -4,15 +4,15 @@ namespace PHPCourse\ex3;
 
 class Fibonachi
 {
-    private static $instance;
+    private static ?self $instance = null;
 
     private function __construct()
     {
         // empty private construct function, so nobody will be able to call it directly
-        $this->logger = new \PHPCourse\Logger\LoggerFile('ex3Fib.log');
+        // to implement singleton
     }
 
-    public static function getInstance(): Fibonachi
+    public static function getInstance(): self
     {
         if (self::$instance === null) {
             self::$instance = new self();
@@ -23,7 +23,6 @@ class Fibonachi
     public function fib(int $n): int
     {
         if ($n < 0) {
-            $this->logger->err('input digit must be >= 0');
             throw new \InvalidArgumentException('input digit must be >= 0');
         }
         if ($n === 0) {
