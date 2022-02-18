@@ -14,7 +14,8 @@
     "autoload": {
         "psr-4": {
             "PHPCourse\\": "src/",
-            "PHPCourseTest\\": "tests/"
+            "PHPCourseTest\\": "tests/",
+            "PHPCourseSample\\": "samples/"
         }
     },
     "require": {

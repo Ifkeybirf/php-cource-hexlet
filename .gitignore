@@ -4,8 +4,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/phpcodesniffer,phpstorm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpcodesniffer,phpstorm+all
 
-# app logfile
-myapp.log
+# app logfiles
+logs/*.log
 
 ### PHPUnit ###
 .phpunit.result.cache
