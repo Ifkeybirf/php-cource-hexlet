@@ -8,7 +8,7 @@ class LoggerFile extends LoggerAbstract
 
     public function __construct(string $fd)
     {
-        $this->logFileName = __DIR__ . '/../../logs/' . $fd;
+        $this->logFileName = $fd;
     }
 
     public function log(string $msg): void

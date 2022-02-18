@@ -4,23 +4,25 @@ namespace PHPCourse\Logger;
 
 class LoggerFake extends LoggerAbstract
 {
+    public ?string $lastMsg = null;
+
     public function log(string $msg): void
     {
-        // TODO: Implement log() method.
+        $this->lastMsg = $msg;
     }
-    
+
     public function err(string $msg): void
     {
-        // TODO: Implement Err() method.
+        $this->log($msg);
     }
 
-    public function warn(string $msg): void
+    public function inf(string $msg): void
     {
-        // TODO: Implement Warn() method.
+        $this->log($msg);
     }
 
-    public function info(string $msg): void
+    public function getLastMsg(): string
     {
-        // TODO: Implement Info() method.
+        return $this->lastMsg;
     }
 }

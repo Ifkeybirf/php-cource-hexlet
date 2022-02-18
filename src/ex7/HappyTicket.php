@@ -2,30 +2,21 @@
 
 namespace PHPCourse\ex7;
 
+use PHPCourse\Logger\LoggerInterface;
+
 class HappyTicket
 {
-    private static $instance;
+    private LoggerInterface $logger;
 
-    private function __construct()
+    public function __construct(LoggerInterface $logger)
     {
-        $myConf = require __DIR__ . '/conf.php';
-
-        $this->LogOut = (new \PHPCourse\Logger\LoggerFactory($myConf['logger'], 'Std0'))->createLogger();
-        $this->LogFl  = (new \PHPCourse\Logger\LoggerFactory($myConf['logger'], 'Fil0'))->createLogger();
-    }
-
-    public static function getInstance(): HappyTicket
-    {
-        if (self::$instance === null) {
-            self::$instance = new self();
-        }
-        return self::$instance;
+        $this->logger = $logger;
     }
 
     public function randomTicketNumber(int $cnt): string
     {
         if ($cnt % 2 !== 0) {
-            $this->LogOut->warn('the number of digits must be even');
+            $this->logger->warn('the number of digits must be even');
             return 0;
         }
 
@@ -40,7 +31,7 @@ class HappyTicket
     public function isHappy(string $ticketNumber): bool
     {
         if (!is_numeric($ticketNumber)) {
-            $this->LogFl->err('the ticket number must contain only digits');
+            $this->logger->err('the ticket number must contain only digits');
             throw new \InvalidArgumentException('the ticket number must contain only digits');
         }
         $ticketLen = strlen($ticketNumber);
@@ -51,7 +42,7 @@ class HappyTicket
          * additionally I'm not sure how to better collapse two 'if' below
          */
         if ($ticketLen % 2 !== 0) {
-            $this->LogFl->inf('the number of digits must be even');
+            $this->logger->inf('the number of digits must be even');
             throw new \InvalidArgumentException('the number of digits must be even');
         }
 

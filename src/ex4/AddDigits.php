@@ -4,14 +4,14 @@ namespace PHPCourse\ex4;
 
 class AddDigits
 {
-    protected static $instance;
+    protected static ?self $instance = null;
 
     private function __construct()
     {
         // empty private construct function, so nobody will be able to call it directly
     }
 
-    public static function getInstance(): AddDigits
+    public static function getInstance(): self
     {
         if (self::$instance === null) {
             self::$instance = new self();
