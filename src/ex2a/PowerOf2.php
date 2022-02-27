@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This is one of test tasks from Code Moc interview.
  * I did not pass it in time but decided to finish, just for myself.
@@ -23,7 +24,7 @@ class PowerOf2
      *
      * @return Boolean
      */
-    function isPowerOfTwo($n)
+    public function isPowerOfTwo($n)
     {
         if ($n < 0) {
             return false;
